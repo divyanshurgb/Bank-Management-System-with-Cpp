@@ -25,8 +25,9 @@ cin>>y;
 cout<<"enter amount for deposit:";
 cin>>balance;
 cout<<"your account is created \n";
+}
 
-void deposit :: deposit_money() {
+void bank :: deposit_money() {
     int a;
 cout<<"enter how much you want to deposit:";
 cin>>a;
@@ -34,14 +35,14 @@ balance += a;
 cout<<"total amount you deposit :: \t"<<balance;
 }
 
-void bank:: Display_account() {
+void bank :: Display_account() {
 cout<<"your full name :: \t"<<name;
 cout<<"Your address :: \t"<<add;
 cout<<"type of account that you open :: \t" <<y;
 cout<<"amount you deposit :: \t" <<balance;
 }
 
-void bank:: Withdraw_money() {
+void bank :: withdraw_money() {
     float amount;
 cout<<"\n withdraw ::";
 cout<<"enter amount to withdraw :: ";
@@ -51,28 +52,27 @@ cout<<"now total amount is left :: "<<balance;
 }
 
 int main() {
-    int ch;
+    int ch, x;
     bank obj;
     do {
     cout<<"1. Open account \n";
     cout<<"2. deposit money \n";
     cout<<"3. withdraw money \n";
-    cout<<"4. withdraw money \n";
-    cout<<"5. Exit";
-    cout<<"select the option from abovev \n";
+    cout<<"4. Display account \n";
+    cout<<"5. Exit \n";
+    cout<<"select the option from above \n";
     cin>>ch;
     switch(ch) {
-    case 1: <<"1. open account \n";
+    case 1: cout<<"1. open account \n";
     obj.open_account();
     break;
-    case 2: <<"2. deposit account \n";
+    case 2: cout<<"2. deposit account \n";
     obj.deposit_money();
     break;
-    }
-    case 3: <<"3. withdraw money: \n";
+    case 3: cout<<"3. withdraw money: \n";
     obj.withdraw_money();
     break;
-    case 4: <<"4. display account \n";
+    case 4: cout<<"4. display account \n";
     obj.Display_account();
     break;
     case 5:
@@ -81,13 +81,15 @@ int main() {
         }
     default:
         cout<<"Please select other option \n";
-        cout<<"\n do you wan tto select next option then press :: y \n";
+        cout<<"\n do you wan to select next option then press :: y \n";
         cout<<"if you want to exit press :: N";
+    }
     x=getch();
-    if(x=='n'||x=='N')
+    if(x=='n'||x=='N') {
         exit(0);
-    } while(x=='y' || x=='y');
-
-    getch();
+    }
+    }
+    while(x=='y' || x=='y');
+        getch();
 return 0;
 }
